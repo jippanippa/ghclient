@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp">
+
+    <RelativeLayout
+        android:id="@+id/upperContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="25dp">
+
+        <TextView
+            android:id="@+id/sha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sha"
+            android:textSize="13sp"
+            android:textAllCaps="true"
+            android:textColor="#000"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/commitMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:textColor="#000"
+            android:layout_below="@id/sha"
+            android:layout_marginTop="15dp"
+            android:text="коммитмесаге"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/upperContainer"
+        android:id="@+id/lowerContainer">
+
+        <TextView
+            android:id="@+id/commitAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:textAllCaps="true"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:text="имярек"
+            android:textStyle="bold|italic"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:text="17 03 2018"/>
+
+    </RelativeLayout>
+
+    <View android:id="@+id/separator"
+          android:background="#000"
+          android:layout_width = "match_parent"
+          android:layout_height="1dp"
+          android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/repoItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp">
+
+        <TextView
+            android:id="@+id/repoItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="репозиторий"
+            android:textAllCaps="true"
+            android:textSize="15sp"
+            android:textColor="#000"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/repoItemDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/repoItemName"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:textColor="#000"
+            android:background="@color/transparent"
+            android:text="У этого репозитория нет описания"/>
+
+        <LinearLayout
+            android:id="@+id/authorLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/repoItemDescription"
+            android:gravity="center_horizontal"
+            android:textColor="#000"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/repoAuthorLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/repoItemDescription"
+                android:layout_marginTop="5dp"
+                android:textColor="#000"
+                android:background="@color/transparent"
+                android:text="Автор: "/>
+
+            <TextView
+                android:id="@+id/repoAuthorName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/repoItemDescription"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/repoAuthorLabel"
+                android:textColor="#000"
+                android:background="@color/transparent"
+                android:text="Пётр 1 "/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/authorLinearLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/forksLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:background="@color/transparent"
+                    android:text="Форков: "/>
+
+                <TextView
+                    android:id="@+id/forksNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:background="@color/transparent"
+                    android:text="0"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/watchersLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:background="@color/transparent"
+                    android:text="Вотчеров: "/>
+
+                <TextView
+                    android:id="@+id/watchersNumber"
+                    android:layout_width="wrap_content"
+                    android:textColor="#000"
+                    android:background="@color/transparent"
+                    android:layout_height="wrap_content"
+                    android:text="0 "/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
