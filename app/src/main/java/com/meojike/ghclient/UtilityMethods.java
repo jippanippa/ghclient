@@ -7,6 +7,7 @@ import android.net.NetworkInfo;
 
 import com.meojike.ghclient.retrofit.GhApiInterface;
 import com.meojike.ghclient.ui.ConnectionProblemsFragment;
+import com.meojike.ghclient.ui.NoBrowsersFoundFragment;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -56,6 +57,11 @@ public class UtilityMethods {
 
     public static void alertUserAboutInternetConnectionError(Context context) {
         ConnectionProblemsFragment dialog = new ConnectionProblemsFragment();
+        dialog.show(((Activity)context).getFragmentManager(), "error_dialog");
+    }
+
+    public static void alertUserAboutLackOfBrowsers(Context context) {
+        NoBrowsersFoundFragment dialog = new NoBrowsersFoundFragment();
         dialog.show(((Activity)context).getFragmentManager(), "error_dialog");
     }
 }

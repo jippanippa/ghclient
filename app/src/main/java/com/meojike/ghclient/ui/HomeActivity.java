@@ -27,6 +27,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static com.meojike.ghclient.UtilityMethods.alertUserAboutInternetConnectionError;
+import static com.meojike.ghclient.UtilityMethods.alertUserAboutLackOfBrowsers;
 import static com.meojike.ghclient.UtilityMethods.isNetworkAvailable;
 
 public class HomeActivity extends AppCompatActivity {
@@ -72,7 +73,12 @@ public class HomeActivity extends AppCompatActivity {
             if (getIntent().getData() == null) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/login/oauth/authorize?client_id="
                         + clientId + "&scope=repo&redirect_uri=" + redirectUri));
-                startActivity(intent);
+
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                } else {
+                    alertUserAboutLackOfBrowsers(mContext);
+                }
             } else {
                 passAuthorization();
             }
